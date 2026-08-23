@@ -2,10 +2,14 @@
 <html lang="ar" dir="rtl">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>ذكرياتنا ❤️✨</title>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>❤️ أجمل ذكريات ❤️</title>
+
 
     <style>
 
@@ -13,28 +17,191 @@
             box-sizing: border-box;
         }
 
+
         body {
+
             margin: 0;
+
             padding: 20px 12px;
+
             background:
-                radial-gradient(circle at top, #fff5f8, #ffdce8 45%, #ffeef4);
+                radial-gradient(
+                    circle at top,
+                    #fff5f8,
+                    #ffdce8 45%,
+                    #ffeef4
+                );
+
             font-family: Arial, sans-serif;
+
             color: #6b2940;
         }
 
+
         .container {
+
             max-width: 650px;
+
             margin: auto;
         }
 
-        /* =========================
-           شاشة البداية
-        ========================= */
+
+
+        /* =====================================
+           شاشة كلمة السر
+        ===================================== */
+
+        #passwordScreen {
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 20000;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 20px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffdce8,
+                    #fff5f8,
+                    #ffc9dc
+                );
+        }
+
+
+        .password-box {
+
+            width: 100%;
+
+            max-width: 400px;
+
+            background: rgba(255,255,255,0.96);
+
+            padding: 35px 25px;
+
+            border-radius: 30px;
+
+            text-align: center;
+
+            box-shadow:
+                0 10px 40px
+                rgba(200, 50, 100, 0.2);
+        }
+
+
+        .password-box .lock {
+
+            font-size: 55px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .password-box h2 {
+
+            margin: 5px 0 10px;
+
+            color: #e91e63;
+
+            font-size: 27px;
+        }
+
+
+        .password-box p {
+
+            color: #8b5265;
+
+            margin-bottom: 20px;
+        }
+
+
+        #passwordInput {
+
+            width: 100%;
+
+            padding: 15px;
+
+            border-radius: 15px;
+
+            border: 2px solid #ffc1d4;
+
+            outline: none;
+
+            font-size: 17px;
+
+            text-align: center;
+
+            background: #fffafd;
+        }
+
+
+        #passwordInput:focus {
+
+            border-color: #e91e63;
+        }
+
+
+        #enterButton {
+
+            width: 100%;
+
+            margin-top: 15px;
+
+            padding: 14px;
+
+            border: none;
+
+            border-radius: 15px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #e91e63,
+                    #ff5c91
+                );
+
+            color: white;
+
+            font-size: 18px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+
+        #errorMessage {
+
+            color: #e91e63;
+
+            margin-top: 12px;
+
+            display: none;
+
+            font-weight: bold;
+        }
+
+
+
+        /* =====================================
+           شاشة الافتتاح
+        ===================================== */
 
         #opening {
+
             position: fixed;
+
             inset: 0;
-            z-index: 9999;
+
+            z-index: 10000;
 
             background:
                 linear-gradient(
@@ -45,45 +212,67 @@
                 );
 
             display: flex;
+
             align-items: center;
+
             justify-content: center;
 
             overflow: hidden;
 
-            animation: openingFade 1s ease forwards;
-            animation-delay: 2.8s;
+            opacity: 1;
         }
 
+
+        #opening.hide {
+
+            animation:
+                openingFade 1s ease forwards;
+        }
+
+
         .opening-text {
+
             text-align: center;
+
             color: #e91e63;
 
-            font-size: 42px;
+            font-size: 40px;
+
             font-weight: bold;
+
             line-height: 1.7;
 
             text-shadow:
-                0 3px 15px rgba(233, 30, 99, 0.25);
+                0 3px 15px
+                rgba(233, 30, 99, 0.25);
 
-            animation: textHeart 1.2s ease-in-out infinite;
+            animation:
+                textHeart 1.2s
+                ease-in-out infinite;
         }
 
+
         .opening-text span {
+
             font-size: 22px;
         }
 
+
         .falling {
+
             position: absolute;
+
             font-size: 35px;
 
             animation:
-                floatDown 3s ease-in-out forwards;
+                floatDown 3s
+                ease-in-out forwards;
         }
+
 
         .flower1 {
             left: 10%;
             top: -50px;
-            animation-delay: .1s;
         }
 
         .flower2 {
@@ -140,13 +329,16 @@
             animation-delay: .2s;
         }
 
+
         @keyframes floatDown {
 
             0% {
+
                 transform:
                     translateY(-100px)
                     rotate(0deg)
                     scale(.5);
+
                 opacity: 0;
             }
 
@@ -159,13 +351,16 @@
             }
 
             100% {
+
                 transform:
                     translateY(100vh)
                     rotate(360deg)
                     scale(1.2);
+
                 opacity: 0;
             }
         }
+
 
         @keyframes textHeart {
 
@@ -182,92 +377,186 @@
             }
         }
 
+
         @keyframes openingFade {
 
             0% {
+
                 opacity: 1;
             }
 
             100% {
+
                 opacity: 0;
+
                 visibility: hidden;
+
                 pointer-events: none;
             }
         }
 
-        /* =========================
+
+
+        /* =====================================
            عنوان الصفحة
-        ========================= */
+        ===================================== */
 
         h1 {
+
             text-align: center;
+
             color: #e91e63;
+
             font-size: 34px;
-            margin: 10px 0 25px;
+
+            margin:
+                10px 0 25px;
 
             text-shadow:
-                0 3px 10px rgba(233, 30, 99, 0.2);
+                0 3px 10px
+                rgba(233,30,99,.2);
         }
 
-        /* =========================
+
+
+        /* =====================================
            الأغنية
-        ========================= */
+        ===================================== */
 
         .music {
-            background: rgba(255, 255, 255, 0.95);
+
+            background:
+                rgba(255,255,255,.95);
 
             padding: 18px;
+
             border-radius: 25px;
+
             margin-bottom: 30px;
 
             text-align: center;
 
             box-shadow:
-                0 8px 25px rgba(200, 70, 110, 0.18);
+                0 8px 25px
+                rgba(200,70,110,.18);
         }
 
+
         .music-title {
+
             color: #e91e63;
+
             font-size: 19px;
+
             font-weight: bold;
+
             margin-bottom: 12px;
         }
 
+
         audio {
+
             width: 100%;
         }
 
-        /* =========================
+
+
+        /* =====================================
+           المقدمة
+        ===================================== */
+
+        .intro {
+
+            position: relative;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #fff0f5,
+                    #ffe0ea
+                );
+
+            padding: 30px 20px;
+
+            margin-bottom: 35px;
+
+            border-radius: 28px;
+
+            text-align: center;
+
+            border:
+                1px solid #ffc1d4;
+
+            box-shadow:
+                0 8px 25px
+                rgba(233,30,99,.15);
+        }
+
+
+        .intro-decoration {
+
+            font-size: 22px;
+
+            letter-spacing: 4px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .intro p {
+
+            margin: 0;
+
+            font-size: 19px;
+
+            line-height: 2;
+
+            color: #7a3048;
+
+            font-weight: 500;
+        }
+
+
+
+        /* =====================================
            الصور
-        ========================= */
+        ===================================== */
 
         .memory {
+
             background: white;
 
             padding: 12px;
+
             margin-bottom: 35px;
 
             border-radius: 25px;
 
             box-shadow:
-                0 8px 25px rgba(200, 70, 110, 0.2);
+                0 8px 25px
+                rgba(200,70,110,.20);
         }
 
+
         .memory img {
+
             width: 100%;
+
             display: block;
 
             border-radius: 20px;
         }
 
-        /* =========================
+
+
+        /* =====================================
            الكلام تحت الصور
-        ========================= */
+        ===================================== */
 
         .message {
-            position: relative;
 
             margin-top: 15px;
+
             padding: 25px 18px;
 
             background:
@@ -277,51 +566,70 @@
                     #ffe1eb
                 );
 
-            border: 1px solid #ffc1d4;
+            border:
+                1px solid #ffc1d4;
+
             border-radius: 22px;
 
             text-align: center;
 
             box-shadow:
-                0 5px 18px rgba(233, 30, 99, 0.12),
-                inset 0 0 15px rgba(255, 120, 160, 0.08);
+                0 5px 18px
+                rgba(233,30,99,.12);
         }
 
+
         .decor-top {
+
             font-size: 20px;
+
             margin-bottom: 12px;
+
             letter-spacing: 4px;
         }
 
+
         .message p {
+
             margin: 0;
 
             font-size: 18px;
+
             line-height: 2;
 
             color: #7a3048;
+
             font-weight: 500;
         }
 
+
         .decor-bottom {
+
             margin-top: 14px;
 
             font-size: 19px;
+
             letter-spacing: 4px;
         }
 
-        /* =========================
-           القلوب الأخيرة
-        ========================= */
+
+
+        /* =====================================
+           النهاية
+        ===================================== */
 
         .hearts {
+
             text-align: center;
 
             font-size: 30px;
+
             margin: 25px 0;
 
-            animation: pulse 1.5s infinite;
+            animation:
+                pulse 1.5s infinite;
         }
+
 
         @keyframes pulse {
 
@@ -346,32 +654,81 @@
 <body>
 
 
-<!-- =================================
-     الافتتاحية
-================================= -->
+<!-- =====================================
+     كلمة السر
+===================================== -->
 
-<div id="opening">
+<div id="passwordScreen">
+
+    <div class="password-box">
+
+        <div class="lock">
+            🔐❤️
+        </div>
+
+        <h2>
+            الصفحة دي ليكي ❤️
+        </h2>
+
+        <p>
+            اكتبي كلمة السر عشان تفتحيها ✨
+        </p>
+
+        <input
+            type="password"
+            id="passwordInput"
+            placeholder="اكتبي كلمة السر هنا"
+        >
+
+        <button id="enterButton">
+            دخول ❤️
+        </button>
+
+        <div id="errorMessage">
+            كلمة السر غلط 😅❤️
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================
+     شاشة الافتتاح
+===================================== -->
+
+<div id="opening" style="display:none;">
 
     <div class="falling flower1">🌹</div>
+
     <div class="falling flower2">🌷</div>
+
     <div class="falling flower3">🌸</div>
 
     <div class="falling heart1">❤️</div>
+
     <div class="falling heart2">💗</div>
+
     <div class="falling heart3">💕</div>
+
     <div class="falling heart4">💞</div>
 
     <div class="falling star1">✨</div>
+
     <div class="falling star2">⭐</div>
+
     <div class="falling star3">✨</div>
+
 
     <div class="opening-text">
 
         ❤️
+
         <br>
 
         <span>
-            لأجمل شوشو في الدنيا
+            لأجمل شوشة في الدنيا
         </span>
 
         <br>
@@ -383,16 +740,18 @@
 </div>
 
 
-<!-- =================================
-     محتوى الصفحة
-================================= -->
+
+<!-- =====================================
+     الصفحة
+===================================== -->
 
 <div class="container">
 
 
     <h1>
-         ❤️✨
+        ذكرياتنا ❤️✨
     </h1>
+
 
 
     <!-- الأغنية -->
@@ -403,7 +762,10 @@
             🎵 أغنيتنا ❤️
         </div>
 
-        <audio controls>
+        <audio
+            id="myMusic"
+            controls
+        >
 
             <source
                 src="oUEDioUM52fGtCWTAlgyVeIzLoETIHVorfSVkI (1).mp3"
@@ -417,9 +779,42 @@
     </div>
 
 
-    <!-- =================================
+
+    <!-- =====================================
+         كلام البداية
+    ===================================== -->
+
+    <div class="intro">
+
+        <div class="intro-decoration">
+            🌹 💗 ✨ 💞 ✨ 💗 🌹
+        </div>
+
+
+        <p>
+
+            انهارده عيد ميلاد أغلى حد عندي في حياتي،
+            كل سنة وإنتي طيبة يا روح قلبي ونور عيني،
+            وكل سنة وإنتي أجمل حد في حياتي،
+            كل سنة وإنتي أقرب لقلبي من كل شيء،
+            ويارب العمر كله نكون سوا،
+            ربنا يخليكي ليا يا شوشتييي
+            وما يحرمنيش منك أبدًا ❤️‍🩹🫂
+
+        </p>
+
+
+        <div class="decor-bottom">
+            💗 ✨ 🌸 ❤️ 🌸 ✨ 💗
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================
          الصورة الأولى
-    ================================= -->
+    ===================================== -->
 
     <div class="memory">
 
@@ -428,18 +823,23 @@
             alt="صورة 1"
         >
 
+
         <div class="message">
 
             <div class="decor-top">
                 ✨ 💗 🌸 💞 ✨
             </div>
 
+
             <p>
+
                 كل سنة وإنتي طيبة يا شوشتي،
                 كل سنة وإنتي جنبي،
                 كل سنة وإنتي نور عيني يا روحي،
                 ربنا يخليكي ليا وما يحرمنيش منك أبدًا 💫💞
+
             </p>
+
 
             <div class="decor-bottom">
                 💗 ✨ 🫂 ✨ 💗
@@ -450,9 +850,10 @@
     </div>
 
 
-    <!-- =================================
+
+    <!-- =====================================
          الصورة الثانية
-    ================================= -->
+    ===================================== -->
 
     <div class="memory">
 
@@ -461,25 +862,30 @@
             alt="صورة 2"
         >
 
+
         <div class="message">
 
             <div class="decor-top">
                 💕 ✨ 🫂 ✨ 💕
             </div>
 
+
             <p>
+
                 عاوز أقولك إني موصلتلكيش بسهولة،
                 إنتي مش مجرد بنت في حياتي،
                 إنتي اللي حاولت عشانك كتير،
                 عشان إنتي تستاهلي،
                 وعشانك أحاول مرة واتنين وتلاتة
                 لحد ما بقينا سوا.
-               يمكن بعدنا ورجعنا،
+                يمكن بعدنا ورجعنا،
                 وكنا نتكلم ونقفل،
                 بس كل اللي أعرفه وحابب أقولهولك
                 إني محبتش حد قدك يا روحي،
                 وربنا يخليكي ليا ❤️‍🩹🫂
+
             </p>
+
 
             <div class="decor-bottom">
                 💞 ⭐ ❤️ ⭐ 💞
@@ -490,9 +896,10 @@
     </div>
 
 
-    <!-- =================================
+
+    <!-- =====================================
          الصورة الثالثة
-    ================================= -->
+    ===================================== -->
 
     <div class="memory">
 
@@ -501,15 +908,20 @@
             alt="صورة 3"
         >
 
+
         <div class="message">
 
             <div class="decor-top">
                 ✨ 💗 👀 💗 ✨
             </div>
 
+
             <p>
+
                 بحبك يا روح قلبييي 👀💗💗
+
             </p>
+
 
             <div class="decor-bottom">
                 💕 ✨ 🫂 ✨ 💕
@@ -520,9 +932,10 @@
     </div>
 
 
-    <!-- =================================
+
+    <!-- =====================================
          الصورة الرابعة
-    ================================= -->
+    ===================================== -->
 
     <div class="memory">
 
@@ -531,20 +944,25 @@
             alt="صورة 4"
         >
 
+
         <div class="message">
 
             <div class="decor-top">
                 💗 ✨ 💞 ⭐ 💞 ✨ 💗
             </div>
 
+
             <p>
+
                 إنتي مش بس حلوة،
-                إنتي من الناس اللي وجودها بيحلي اليوم أحلى،
+                إنتي من الناس اللي وجودها بيخلّي اليوم أحلى،
                 وضحكتك لوحدها كفاية تغيّر مود يوم كامل.
                 عيونك حكاية،
                 وابتسامتك أجمل حاجة ممكن أشوفها،
                 وربنا يخليكي ليا يا أجمل حاجة حصلتلي ✨💗🫂
+
             </p>
+
 
             <div class="decor-bottom">
                 ❤️ 💕 ❤️ 💕 ❤️
@@ -555,16 +973,148 @@
     </div>
 
 
+
     <!-- النهاية -->
 
     <div class="hearts">
+
         ❤️ ✨ ❤️ ✨ ❤️
+
     </div>
 
 
 </div>
 
 
+
+<!-- =====================================
+     JavaScript
+===================================== -->
+
+<script>
+
+    const passwordInput =
+        document.getElementById("passwordInput");
+
+    const enterButton =
+        document.getElementById("enterButton");
+
+    const passwordScreen =
+        document.getElementById("passwordScreen");
+
+    const opening =
+        document.getElementById("opening");
+
+    const errorMessage =
+        document.getElementById("errorMessage");
+
+    const music =
+        document.getElementById("myMusic");
+
+
+    function openPage() {
+
+        /*
+           كلمة السر
+        */
+
+        const correctPassword =
+            "بحبك يا احمد";
+
+
+        const enteredPassword =
+            passwordInput.value.trim();
+
+
+        if (enteredPassword === correctPassword) {
+
+            /*
+               إخفاء شاشة كلمة السر
+            */
+
+            passwordScreen.style.display = "none";
+
+
+            /*
+               إظهار شاشة الافتتاح
+            */
+
+            opening.style.display = "flex";
+
+
+            /*
+               تشغيل الأغنية
+               
+               الضغط على زر الدخول يعتبر
+               تفاعل من المستخدم، لذلك
+               المتصفح يسمح غالبًا بالتشغيل.
+            */
+
+            music.play().catch(function () {
+
+                console.log(
+                    "المتصفح منع التشغيل التلقائي."
+                );
+
+            });
+
+
+            /*
+               بعد 3 ثواني
+               تبدأ شاشة الافتتاح بالاختفاء
+            */
+
+            setTimeout(function () {
+
+                opening.classList.add("hide");
+
+            }, 3000);
+
+
+        } else {
+
+            errorMessage.style.display =
+                "block";
+
+            passwordInput.value = "";
+
+            passwordInput.focus();
+
+        }
+
+    }
+
+
+    /*
+       زر الدخول
+    */
+
+    enterButton.addEventListener(
+        "click",
+        openPage
+    );
+
+
+    /*
+       لو ضغط Enter من الكيبورد
+    */
+
+    passwordInput.addEventListener(
+        "keydown",
+        function(event) {
+
+            if (event.key === "Enter") {
+
+                openPage();
+
+            }
+
+        }
+    );
+
+</script>
+
+
 </body>
 
-</html>
+    </html>
