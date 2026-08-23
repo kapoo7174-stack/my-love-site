@@ -392,8 +392,8 @@ input:focus {
     <div class="sparkle" style="top:85%; left:45%; font-size:20px;">💖</div>
 </div>
 
-<!-- ================= عنصر الصوت ================= -->
-<audio id="myAudio" src="song.mp3" loop></audio>
+<!-- ================= عنصر الصوت بالاسم الدقيق ================= -->
+<audio id="myAudio" src="./oUEDioUM52fgCWTAI" loop></audio>
 
 <!-- ================= الكارت ================= -->
 
@@ -465,22 +465,19 @@ input:focus {
             <div class="special">عيد ميلاد سعيد يا شوشتييي 🎂💖✨</div>
         </div>
 
-        <!-- ================= معرض الصور ================= -->
+        <!-- ================= معرض الصور بأسماء الصور الفعلية ================= -->
 
         <div class="gallery-title">ذكرياتنا الحلوة 📸❤️</div>
 
         <div class="gallery">
             <div class="photo-wrapper">
-                <img src="1.jpg" alt="صورة 1" class="photo">
+                <img src="./Screenshot_٠٣١٩٤٥_٢٠٢٦٠..." alt="صورة 1" class="photo">
             </div>
             <div class="photo-wrapper">
-                <img src="2.jpg" alt="صورة 2" class="photo">
+                <img src="./Screenshot_٠٣١٩٥٨_٢٠٢٦٠..." alt="صورة 2" class="photo">
             </div>
             <div class="photo-wrapper">
-                <img src="3.jpg" alt="صورة 3" class="photo">
-            </div>
-            <div class="photo-wrapper">
-                <img src="4.jpg" alt="صورة 4" class="photo">
+                <img src="./Screenshot_٠٣٢٠٣٥_٢٠٢٦٠..." alt="صورة 3" class="photo">
             </div>
         </div>
 
@@ -497,7 +494,6 @@ input:focus {
 <!-- ================= الجافاسكريبت ================= -->
 
 <script>
-// إنشاء قلوب متطايرة ملونة ومتحركة في الخلفية
 const heartEmojis = ['❤️', '💖', '💕', '💗', '🌸', '✨'];
 
 function createHeart() {
@@ -505,10 +501,8 @@ function createHeart() {
     const heart = document.createElement('div');
     heart.classList.add('heart');
     
-    // اختيار إيموجي عشوائي
     heart.innerText = heartEmojis[Math.floor(Math.random() * heartEmojis.length)];
     
-    // موقع عشوائي وحجم عشوائي
     heart.style.left = Math.random() * 100 + 'vw';
     heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
     heart.style.fontSize = (Math.random() * 15 + 18) + 'px';
@@ -520,17 +514,14 @@ function createHeart() {
     }, 6000);
 }
 
-// توليد القلوب بشكل مستمر
 setInterval(createHeart, 350);
 
-// دعم ضغط زر Enter في خانة كلمة السر
 function handleKeyPress(event) {
     if (event.key === 'Enter') {
         checkPass();
     }
 }
 
-// التحقق من كلمة السر
 function checkPass() {
     const input = document.getElementById('passInput').value.trim();
     const error = document.getElementById('error');
@@ -538,21 +529,17 @@ function checkPass() {
     const content = document.getElementById('content');
     const audio = document.getElementById('myAudio');
 
-    // كلمة السر هي: بحبك يا احمد
-    if (input === "بحبك يا احمد" || input === "بحبك ياأحمد" || input === "بحبك يا احمد ") {
+    if (input === "بحبك يا احمد" || input === "بحبك ياأحمد") {
         passScreen.style.display = 'none';
         content.style.display = 'block';
         error.style.display = 'none';
         
-        // تشغيل الموسيقى تلقائياً عند فتح الكارت
         audio.play().then(() => {
             document.getElementById('musicToggle').innerHTML = '⏸️ إيقاف الموسيقى';
         }).catch(() => {
-            // في حال منع المتصفح التشغيل التلقائي
             document.getElementById('musicToggle').innerHTML = '▶️ تشغيل الموسيقى';
         });
 
-        // إطلاق تأثير القلوب الترحيبية (Confetti effect)
         for(let i = 0; i < 25; i++) {
             setTimeout(createHeart, i * 80);
         }
@@ -561,7 +548,6 @@ function checkPass() {
     }
 }
 
-// التحكم في تشغيل وإيقاف الموسيقى
 function toggleMusic() {
     const audio = document.getElementById('myAudio');
     const btn = document.getElementById('musicToggle');
@@ -577,4 +563,4 @@ function toggleMusic() {
 </script>
 
 </body>
-     </html>
+            </html>
