@@ -13,7 +13,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@400;500;600&display=swap" rel="stylesheet">
 
     <style>
-
         * {
             box-sizing: border-box;
         }
@@ -32,6 +31,7 @@
 
             color: #653345;
             font-family: "Cairo", Arial, sans-serif;
+            overflow-x: hidden;
         }
 
         .container {
@@ -90,7 +90,8 @@
 
             color: #c92f61;
 
-            font-size: 27px;
+            font-size: 24px;
+            font-family: "Aref Ruqaa", serif;
         }
 
         .password-box p {
@@ -154,6 +155,38 @@
 
 
         /* =========================
+           تأثير الورد والقلوب الوردي (3 ثواني)
+        ========================= */
+
+        #petalsContainer {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 15000;
+            opacity: 1;
+            transition: opacity 1s ease;
+        }
+
+        .petal {
+            position: absolute;
+            top: -10%;
+            font-size: 24px;
+            animation: fall 3s linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(0vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(105vh) rotate(360deg);
+                opacity: 0.2;
+            }
+        }
+
+
+        /* =========================
            شاشة الافتتاح
         ========================= */
 
@@ -206,4 +239,789 @@
 
             line-height: 1.8;
 
-           
+            animation:
+                textAppear .9s ease forwards;
+        }
+
+        .line1 {
+            animation-delay: .3s;
+        }
+
+        .line2 {
+            animation-delay: 1s;
+        }
+
+        .line3 {
+            animation-delay: 1.7s;
+        }
+
+        .line4 {
+            animation-delay: 2.4s;
+        }
+
+        .opening-small {
+            opacity: 0;
+
+            font-size: 19px;
+
+            margin-top: 12px;
+
+            color: #b45a75;
+
+            animation:
+                textAppear .9s ease forwards;
+
+            animation-delay: 3s;
+        }
+
+        @keyframes textAppear {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes openingFade {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+
+                visibility: hidden;
+
+                pointer-events: none;
+            }
+        }
+
+
+        /* رموز بسيطة */
+
+        .floating {
+            position: absolute;
+
+            font-size: 25px;
+
+            opacity: 0;
+
+            animation:
+                floatElement 3s ease forwards;
+        }
+
+        .f1 {
+            left: 12%;
+            top: 15%;
+        }
+
+        .f2 {
+            right: 13%;
+            top: 25%;
+
+            animation-delay: .7s;
+        }
+
+        .f3 {
+            left: 18%;
+            bottom: 18%;
+
+            animation-delay: 1.1s;
+        }
+
+        .f4 {
+            right: 18%;
+            bottom: 15%;
+
+            animation-delay: .5s;
+        }
+
+        @keyframes floatElement {
+            0% {
+                opacity: 0;
+
+                transform:
+                    translateY(15px)
+                    scale(.7);
+            }
+
+            30% {
+                opacity: .9;
+            }
+
+            80% {
+                opacity: .8;
+            }
+
+            100% {
+                opacity: 0;
+
+                transform:
+                    translateY(-30px)
+                    scale(1);
+            }
+        }
+
+
+        /* =========================
+           المقدمة
+        ========================= */
+
+        .main-intro {
+            margin-top: 20px;
+
+            margin-bottom: 35px;
+
+            padding: 28px 20px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #fff4f7,
+                    #ffe7ef
+                );
+
+            border-radius: 25px;
+
+            border: 1px solid #f3c0cf;
+
+            text-align: center;
+
+            box-shadow:
+                0 7px 25px rgba(180,60,100,.12);
+        }
+
+        .main-intro p {
+            margin: 0;
+
+            font-family:
+                "Aref Ruqaa",
+                serif;
+
+            font-size: 23px;
+
+            line-height: 2;
+
+            color: #7e3650;
+        }
+
+
+        /* =========================
+           الصور
+        ========================= */
+
+        .memory {
+            background: white;
+
+            padding: 11px;
+
+            margin-bottom: 35px;
+
+            border-radius: 24px;
+
+            box-shadow:
+                0 8px 25px rgba(180,60,100,.15);
+        }
+
+        .memory img {
+            width: 100%;
+
+            display: block;
+
+            border-radius: 19px;
+        }
+
+
+        /* =========================
+           الكلام تحت الصور (خط رقعة وتدريج جملة بجانب جملة)
+        ========================= */
+
+        .message {
+            margin-top: 14px;
+
+            padding: 23px 17px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #fff3f6,
+                    #ffe5ed
+                );
+
+            border-radius: 20px;
+
+            border: 1px solid #f2c1d0;
+
+            text-align: center;
+        }
+
+        .decor {
+            font-size: 21px;
+
+            margin-bottom: 10px;
+
+            letter-spacing: 3px;
+        }
+
+        /* تنسيق الفقرة بجانب بعضها مع خط رقعة */
+        .message p {
+            margin: 0;
+            font-family: "Aref Ruqaa", serif;
+            font-size: 22px;
+            line-height: 2.1;
+            color: #75364d;
+            display: inline;
+        }
+
+        /* تأثير الجمل التي تظهر بتدريج */
+        .fade-phrase {
+            display: inline;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-phrase.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .decor-bottom {
+            margin-top: 12px;
+
+            font-size: 19px;
+        }
+
+
+        /* =========================
+           النهاية
+        ========================= */
+
+        .final-message {
+            margin-top: 15px;
+
+            padding: 35px 20px;
+
+            text-align: center;
+        }
+
+        .final-message .small {
+            font-family:
+                "Aref Ruqaa",
+                serif;
+
+            color: #a3536d;
+
+            font-size: 19px;
+
+            margin-bottom: 10px;
+        }
+
+        .final-message h2 {
+            margin: 0;
+
+            font-family:
+                "Aref Ruqaa",
+                serif;
+
+            font-size: 38px;
+
+            color: #c63867;
+
+            font-weight: 700;
+        }
+
+
+        /* =========================
+           الأغنية في آخر الصفحة
+        ========================= */
+
+        .music {
+            margin-top: 10px;
+
+            padding: 20px;
+
+            background:
+                rgba(255,255,255,.9);
+
+            border-radius: 20px;
+
+            text-align: center;
+
+            box-shadow:
+                0 6px 20px rgba(180,60,100,.12);
+        }
+
+        .music-title {
+            font-family:
+                "Aref Ruqaa",
+                serif;
+
+            font-size: 22px;
+
+            color: #a63c5d;
+
+            margin-bottom: 12px;
+        }
+
+        audio {
+            width: 100%;
+        }
+
+        .footer-space {
+            height: 10px;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     كلمة السر
+========================= -->
+
+<div id="passwordScreen">
+
+    <div class="password-box">
+
+        <div class="password-lock">
+            🔐
+        </div>
+
+        <h2>
+            من احمد الي شروق اللي مطلعه عينه
+        </h2>
+
+        <p>
+            اكتبي كلمة السر لتفتحي الرسالة 😉
+        </p>
+
+        <input
+            type="password"
+            id="passwordInput"
+            placeholder="اكتبي كلمة السر"
+        >
+
+        <button id="enterButton">
+            دخول
+        </button>
+
+        <div id="errorMessage">
+            كلمة السر غلط 😂
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     حاوية الورد والقلوب الوردي
+========================= -->
+<div id="petalsContainer"></div>
+
+
+<!-- =========================
+     الافتتاح
+========================= -->
+
+<div id="opening">
+
+    <div class="floating f1">🌹</div>
+
+    <div class="floating f2">🫂</div>
+
+    <div class="floating f3">✨</div>
+
+    <div class="floating f4">😘</div>
+
+
+    <div class="opening-content">
+
+        <div class="opening-line line1">
+            انهارده عيد ميلاد أغلى حد عندي في حياتي
+        </div>
+
+        <div class="opening-line line2">
+            كل سنة وإنتي طيبة يا روح قلبي ونور عيني
+        </div>
+
+        <div class="opening-line line3">
+            وكل سنة وإنتي أجمل حد في حياتي
+        </div>
+
+        <div class="opening-line line4">
+            ويارب العمر كله نكون سوا
+        </div>
+
+        <div class="opening-small">
+            ربنا يخليكي ليا يا شوشتييي وما يحرمنيش منك أبدًا 🌹
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================
+     محتوى الصفحة
+========================= -->
+
+<div class="container">
+
+
+    <!-- المقدمة -->
+
+    <div class="main-intro">
+
+        <p>
+            انهارده عيد ميلاد أغلى حد عندي في حياتي،
+            كل سنة وإنتي طيبة يا روح قلبي ونور عيني،
+            وكل سنة وإنتي أجمل حد في حياتي،
+            كل سنة وإنتي أقرب لقلبي من كل شيء،
+            ويارب العمر كله نكون سوا،
+            ربنا يخليكي ليا يا شوشتييي
+            وما يحرمنيش منك أبدًا 🫂
+        </p>
+
+    </div>
+
+
+
+    <!-- الصورة الأولى -->
+
+    <div class="memory">
+
+        <img
+            src="Snapchat-856034311.jpg"
+            alt="صورة 1"
+        >
+
+        <div class="message">
+
+            <div class="decor">
+                🌹 ✨
+            </div>
+
+            <p>
+                <span class="fade-phrase">كل سنة وإنتي طيبة يا شوشتي، </span>
+                <span class="fade-phrase">كل سنة وإنتي جنبى، </span>
+                <span class="fade-phrase">كل سنة وإنتي نور عيني يا روحي، </span>
+                <span class="fade-phrase">ربنا يخليكي ليا وما يحرمنيش منك أبدًا 💫💞</span>
+            </p>
+
+            <div class="decor-bottom">
+                🫂
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- الصورة الثانية -->
+
+    <div class="memory">
+
+        <img
+            src="Snapchat-1707431406.jpg"
+            alt="صورة 2"
+        >
+
+        <div class="message">
+
+            <div class="decor">
+                🌹
+            </div>
+
+            <p>
+                <span class="fade-phrase">عاوز أقولك إني موصلتلكيش بسهولة، </span>
+                <span class="fade-phrase">إنتي مش مجرد بنت في حياتي، </span>
+                <span class="fade-phrase">إنتي اللي حاولت عشانك كتير، </span>
+                <span class="fade-phrase">عشان إنتي تستاهلي، </span>
+                <span class="fade-phrase">وعشانك أحاول مرة واتنين وتلاتة لحد ما بقينا سوا. </span>
+                <span class="fade-phrase">يمكن بعدنا ورجعنا، </span>
+                <span class="fade-phrase">وكنا نتكلم ونقفل، </span>
+                <span class="fade-phrase">بس كل اللي أعرفه وحابب أقولهولك </span>
+                <span class="fade-phrase">إني محبتش حد قدك يا روحي، </span>
+                <span class="fade-phrase">وربنا يخليكي ليا ❤️‍🩹🫂</span>
+            </p>
+
+            <div class="decor-bottom">
+                🫂
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- الصورة الثالثة -->
+
+    <div class="memory">
+
+        <img
+            src="Snapchat-1489699393.jpg"
+            alt="صورة 3"
+        >
+
+        <div class="message">
+
+            <div class="decor">
+                ✨
+            </div>
+
+            <p>
+                <span class="fade-phrase">بحبك يا روح قلبييي 👀💗💗</span>
+            </p>
+
+            <div class="decor-bottom">
+                😘
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- الصورة الرابعة -->
+
+    <div class="memory">
+
+        <img
+            src="Screenshot_٢٠٢٦٠٨٢٣_١٨١٠٣٦_TikTok.jpg"
+            alt="صورة 4"
+        >
+
+        <div class="message">
+
+            <div class="decor">
+                🌹 ✨
+            </div>
+
+            <p>
+                <span class="fade-phrase">إنتي مش بس حلوة، </span>
+                <span class="fade-phrase">إنتي من الناس اللي وجودها بيخلّي اليوم أحلى، </span>
+                <span class="fade-phrase">وضحكتك لوحدها كفاية تغيّر مود يوم كامل. </span>
+                <span class="fade-phrase">عيونك حكاية، </span>
+                <span class="fade-phrase">وابتسامتك أجمل حاجة ممكن أشوفها، </span>
+                <span class="fade-phrase">وربنا يخليكي ليا يا أجمل حاجة حصلتلي 🫂</span>
+            </p>
+
+            <div class="decor-bottom">
+                😘
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- النهاية -->
+
+    <div class="final-message">
+
+        <div class="small">
+            من قلبي ليكي
+        </div>
+
+        <h2>
+            بعشقكك يروحح قلبي
+        </h2>
+
+        <div class="small">
+            🫂 🌹
+        </div>
+
+    </div>
+
+
+
+    <!-- الأغنية في آخر الصفحة -->
+
+    <div class="music">
+
+        <div class="music-title">
+            أغنيتنا
+        </div>
+
+        <audio
+            id="myMusic"
+            controls
+            loop
+        >
+
+            <source
+                src="oUEDioUM52fGtCWTAlgyVeIzLoETIHVorfSVkI (1).mp3"
+                type="audio/mpeg"
+            >
+
+            المتصفح لا يدعم تشغيل الصوت.
+
+        </audio>
+
+    </div>
+
+
+    <div class="footer-space"></div>
+
+</div>
+
+
+
+<script>
+
+const passwordInput =
+    document.getElementById("passwordInput");
+
+const enterButton =
+    document.getElementById("enterButton");
+
+const passwordScreen =
+    document.getElementById("passwordScreen");
+
+const opening =
+    document.getElementById("opening");
+
+const errorMessage =
+    document.getElementById("errorMessage");
+
+const music =
+    document.getElementById("myMusic");
+
+const petalsContainer =
+    document.getElementById("petalsContainer");
+
+
+function startPetals() {
+    const items = ['🌸', '🌹', '💖', '💗', '🌺', '💕'];
+    
+    for (let i = 0; i < 25; i++) {
+        const petal = document.createElement('div');
+        petal.className = 'petal';
+        petal.innerText = items[Math.floor(Math.random() * items.length)];
+        petal.style.left = Math.random() * 100 + 'vw';
+        petal.style.animationDuration = (2 + Math.random() * 1.5) + 's';
+        petal.style.fontSize = (18 + Math.random() * 14) + 'px';
+        petalsContainer.appendChild(petal);
+    }
+
+    // تختفي القلوب والورد تدريجياً بعد 3 ثواني
+    setTimeout(function() {
+        petalsContainer.style.opacity = "0";
+        setTimeout(function() {
+            petalsContainer.style.display = "none";
+        }, 1000);
+    }, 3000);
+}
+
+// دالة إظهار الكلام بتدريج متتالي عند التمرير إلى الصورة
+function setupScrollTextAnimation() {
+    const messages = document.querySelectorAll('.message');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const phrases = entry.target.querySelectorAll('.fade-phrase');
+                phrases.forEach((phrase, index) => {
+                    setTimeout(() => {
+                        phrase.classList.add('show');
+                    }, index * 450); // الفارق الزمني بين كل جملة والجملة المجاروة لها (450 مللي ثانية)
+                });
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.3 });
+
+    messages.forEach(msg => observer.observe(msg));
+}
+
+
+function openPage() {
+
+    const correctPassword =
+        "بحبك يا احمد";
+
+    const enteredPassword =
+        passwordInput.value.trim();
+
+
+    if (enteredPassword === correctPassword) {
+
+        passwordScreen.style.display =
+            "none";
+
+        opening.style.display =
+            "flex";
+
+        // إطلاق تساقط الورد والقلوب
+        startPetals();
+
+        // تفعيل حركة ظهور الكلام التدريجية عند السكرول
+        setupScrollTextAnimation();
+
+        /*
+         تشغيل الأغنية فوراً مع إدخال كلمة السر
+        */
+        music.play().catch(function(err) {
+            console.log("المتصفح منع التشغيل التلقائي:", err);
+        });
+
+
+        /*
+         الافتتاحية تختفي بعد 4 ثواني
+        */
+        setTimeout(function() {
+
+            opening.classList.add("hide");
+
+        }, 4000);
+
+
+    } else {
+
+        errorMessage.style.display =
+            "block";
+
+        passwordInput.value = "";
+
+        passwordInput.focus();
+
+    }
+
+}
+
+
+enterButton.addEventListener(
+    "click",
+    openPage
+);
+
+
+passwordInput.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (event.key === "Enter") {
+
+            openPage();
+
+        }
+
+    }
+);
+
+</script>
+
+
+</body>
+
+            </html>
