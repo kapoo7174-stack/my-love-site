@@ -1,570 +1,570 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>عيد ميلاد شوشتي ❤️</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Amiri:wght@700&display=swap');
+    <title>ذكرياتنا ❤️✨</title>
 
-* {
-    box-sizing: border-box;
-}
+    <style>
 
-body {
-    margin: 0;
-    min-height: 100vh;
-    font-family: 'Cairo', sans-serif;
-    background:
-        radial-gradient(circle at 20% 20%, #ffd1dc, transparent 35%),
-        radial-gradient(circle at 80% 80%, #e5c7ff, transparent 35%),
-        linear-gradient(135deg, #ff758c, #ff7eb3, #c084fc);
-    background-size: 200% 200%;
-    animation: gradientBG 10s ease infinite;
-    color: #54233d;
-    overflow-x: hidden;
-}
+        * {
+            box-sizing: border-box;
+        }
 
-@keyframes gradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
+        body {
+            margin: 0;
+            padding: 20px 12px;
+            background:
+                radial-gradient(circle at top, #fff5f8, #ffdce8 45%, #ffeef4);
+            font-family: Arial, sans-serif;
+            color: #6b2940;
+        }
 
-/* ================= الخلفية والمؤثرات ================= */
+        .container {
+            max-width: 650px;
+            margin: auto;
+        }
 
-.background {
-    position: fixed;
-    inset: 0;
-    overflow: hidden;
-    pointer-events: none;
-    z-index: 0;
-}
+        /* =========================
+           شاشة البداية
+        ========================= */
 
-.heart {
-    position: absolute;
-    bottom: -60px;
-    animation: floatUp linear infinite;
-    opacity: 0;
-    filter: drop-shadow(0 0 5px rgba(255, 105, 180, 0.5));
-}
+        #opening {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
 
-@keyframes floatUp {
-    0% {
-        transform: translateY(0) scale(.5) rotate(0deg);
-        opacity: 0;
-    }
-    15% {
-        opacity: .9;
-    }
-    100% {
-        transform: translateY(-115vh) scale(1.4) rotate(360deg);
-        opacity: 0;
-    }
-}
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffe0eb,
+                    #fff4f8,
+                    #ffdce8
+                );
 
-.sparkle {
-    position: absolute;
-    animation: sparkle 2.5s infinite ease-in-out;
-}
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-@keyframes sparkle {
-    0%, 100% {
-        opacity: 0.2;
-        transform: scale(.5) rotate(0deg);
-    }
-    50% {
-        opacity: 1;
-        transform: scale(1.5) rotate(180deg);
-    }
-}
+            overflow: hidden;
 
-/* ================= الكارت ================= */
+            animation: openingFade 1s ease forwards;
+            animation-delay: 2.8s;
+        }
 
-.card {
-    position: relative;
-    z-index: 2;
-    width: 92%;
-    max-width: 700px;
-    margin: 35px auto;
-    padding: 35px 25px;
-    background: rgba(255, 255, 255, 0.92);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border-radius: 35px;
-    border: 2px solid rgba(255, 255, 255, 0.6);
-    box-shadow:
-        0 25px 70px rgba(100,0,60,.25),
-        0 0 50px rgba(255,255,255,.4);
-    text-align: center;
-    animation: cardIn 1.2s ease;
-}
+        .opening-text {
+            text-align: center;
+            color: #e91e63;
 
-@keyframes cardIn {
-    from {
-        opacity: 0;
-        transform: translateY(50px) scale(.9);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-}
+            font-size: 42px;
+            font-weight: bold;
+            line-height: 1.7;
 
-/* ================= شاشة كلمة السر ================= */
+            text-shadow:
+                0 3px 15px rgba(233, 30, 99, 0.25);
 
-.lock {
-    font-size: 75px;
-    animation: heartbeat 1.3s infinite ease-in-out;
-    display: inline-block;
-}
+            animation: textHeart 1.2s ease-in-out infinite;
+        }
 
-@keyframes heartbeat {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.18);
-    }
-}
+        .opening-text span {
+            font-size: 22px;
+        }
 
-h1 {
-    font-family: 'Amiri', serif;
-    color: #c2185b;
-    font-size: 36px;
-    margin-top: 10px;
-}
+        .falling {
+            position: absolute;
+            font-size: 35px;
 
-.subtitle {
-    font-size: 17px;
-    line-height: 2;
-    color: #75445d;
-}
+            animation:
+                floatDown 3s ease-in-out forwards;
+        }
 
-input {
-    width: 85%;
-    padding: 15px;
-    border-radius: 30px;
-    border: 2px solid #ff8fab;
-    outline: none;
-    text-align: center;
-    font-family: 'Cairo', sans-serif;
-    font-size: 16px;
-    transition: all 0.3s ease;
-    background: rgba(255, 255, 255, 0.9);
-}
+        .flower1 {
+            left: 10%;
+            top: -50px;
+            animation-delay: .1s;
+        }
 
-input:focus {
-    border-color: #c2185b;
-    box-shadow: 0 0 20px rgba(194, 24, 91, 0.3);
-    transform: scale(1.02);
-}
+        .flower2 {
+            left: 75%;
+            top: -70px;
+            animation-delay: .4s;
+        }
 
-.btn {
-    margin-top: 15px;
-    padding: 14px 35px;
-    border: none;
-    border-radius: 30px;
-    background: linear-gradient(135deg, #ff477e, #c2185b);
-    color: white;
-    font-family: 'Cairo', sans-serif;
-    font-size: 17px;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: 0 10px 25px rgba(194,24,91,.3);
-    transition: all .3s ease;
-}
+        .flower3 {
+            left: 45%;
+            top: -60px;
+            animation-delay: .7s;
+        }
 
-.btn:hover {
-    transform: translateY(-4px) scale(1.05);
-    box-shadow: 0 15px 30px rgba(194,24,91,.4);
-}
+        .heart1 {
+            left: 20%;
+            top: -50px;
+            animation-delay: .2s;
+        }
 
-#error {
-    display: none;
-    color: #d32f2f;
-    font-size: 15px;
-    font-weight: bold;
-    margin-top: 12px;
-    animation: shake 0.4s ease-in-out;
-}
+        .heart2 {
+            left: 85%;
+            top: -50px;
+            animation-delay: .5s;
+        }
 
-@keyframes shake {
-    0%, 100% { transform: translateX(0); }
-    20%, 60% { transform: translateX(-8px); }
-    40%, 80% { transform: translateX(8px); }
-}
+        .heart3 {
+            left: 60%;
+            top: -60px;
+            animation-delay: .8s;
+        }
 
-/* ================= المحتوى ================= */
+        .heart4 {
+            left: 35%;
+            top: -60px;
+            animation-delay: .3s;
+        }
 
-#content {
-    display: none;
-    animation: contentShow 1.2s ease forwards;
-}
+        .star1 {
+            left: 5%;
+            top: -50px;
+            animation-delay: .6s;
+        }
 
-@keyframes contentShow {
-    from {
-        opacity: 0;
-        transform: scale(.85) translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1) translateY(0);
-    }
-}
+        .star2 {
+            left: 90%;
+            top: -50px;
+            animation-delay: .9s;
+        }
 
-.big-heart {
-    font-size: 80px;
-    animation: heartbeat 1.2s infinite ease-in-out;
-    display: inline-block;
-}
+        .star3 {
+            left: 50%;
+            top: -50px;
+            animation-delay: .2s;
+        }
 
-.title {
-    font-size: 38px;
-    line-height: 1.5;
-    margin-bottom: 5px;
-    animation: glowText 2s infinite alternate;
-}
+        @keyframes floatDown {
 
-@keyframes glowText {
-    from { text-shadow: 0 0 5px rgba(194,24,91,0.2); }
-    to { text-shadow: 0 0 18px rgba(194,24,91,0.6); }
-}
+            0% {
+                transform:
+                    translateY(-100px)
+                    rotate(0deg)
+                    scale(.5);
+                opacity: 0;
+            }
 
-/* ================= مشغل الموسيقى ================= */
+            20% {
+                opacity: 1;
+            }
 
-.music-player {
-    margin: 20px auto 10px;
-    padding: 15px 20px;
-    background: rgba(255, 240, 246, 0.85);
-    border-radius: 25px;
-    border: 1px solid #ffb6c1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    box-shadow: 0 8px 20px rgba(194,24,91,0.1);
-}
+            70% {
+                opacity: 1;
+            }
 
-.music-btn {
-    padding: 10px 22px;
-    border: none;
-    border-radius: 20px;
-    background: linear-gradient(135deg, #8e44ad, #c2185b);
-    color: white;
-    font-family: 'Cairo', sans-serif;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: 0 5px 15px rgba(142,68,173,0.3);
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
+            100% {
+                transform:
+                    translateY(100vh)
+                    rotate(360deg)
+                    scale(1.2);
+                opacity: 0;
+            }
+        }
 
-.music-btn:hover {
-    transform: scale(1.05);
-}
+        @keyframes textHeart {
 
-/* ================= الرسالة ================= */
+            0% {
+                transform: scale(1);
+            }
 
-.message {
-    margin-top: 25px;
-    padding: 25px;
-    background: linear-gradient(135deg, #fff0f6, #ffffff);
-    border-radius: 25px;
-    border-right: 6px solid #ff477e;
-    box-shadow: 0 10px 30px rgba(160,30,90,.12);
-    text-align: right;
-    font-size: 18px;
-    line-height: 2.2;
-    animation: messageIn 1.5s ease;
-}
+            50% {
+                transform: scale(1.08);
+            }
 
-@keyframes messageIn {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+            100% {
+                transform: scale(1);
+            }
+        }
 
-.message .special {
-    color: #c2185b;
-    font-weight: bold;
-    font-size: 21px;
-    text-align: center;
-}
+        @keyframes openingFade {
 
-/* ================= المعرض والصور ================= */
+            0% {
+                opacity: 1;
+            }
 
-.gallery-title {
-    margin-top: 35px;
-    color: #c2185b;
-    font-size: 25px;
-    font-weight: bold;
-}
+            100% {
+                opacity: 0;
+                visibility: hidden;
+                pointer-events: none;
+            }
+        }
 
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    margin-top: 20px;
-}
+        /* =========================
+           عنوان الصفحة
+        ========================= */
 
-.photo-wrapper {
-    overflow: hidden;
-    border-radius: 22px;
-    border: 4px solid white;
-    box-shadow: 0 10px 25px rgba(80,0,40,.2);
-    transition: transform 0.4s ease;
-}
+        h1 {
+            text-align: center;
+            color: #e91e63;
+            font-size: 34px;
+            margin: 10px 0 25px;
 
-.photo-wrapper:hover {
-    transform: scale(1.04) rotate(1.5deg);
-}
+            text-shadow:
+                0 3px 10px rgba(233, 30, 99, 0.2);
+        }
 
-.photo {
-    width: 100%;
-    height: 230px;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.5s ease;
-}
+        /* =========================
+           الأغنية
+        ========================= */
 
-.photo-wrapper:hover .photo {
-    transform: scale(1.1);
-}
+        .music {
+            background: rgba(255, 255, 255, 0.95);
 
-/* ================= النهاية ================= */
+            padding: 18px;
+            border-radius: 25px;
+            margin-bottom: 30px;
 
-.end {
-    margin-top: 35px;
-    font-size: 24px;
-    color: #c2185b;
-    font-weight: bold;
-    animation: heartbeat 1.5s infinite ease-in-out;
-}
+            text-align: center;
 
-/* ================= الموبايل ================= */
+            box-shadow:
+                0 8px 25px rgba(200, 70, 110, 0.18);
+        }
 
-@media(max-width:600px) {
-    .card {
-        margin: 20px auto;
-        padding: 28px 17px;
-        border-radius: 28px;
-    }
-    h1 {
-        font-size: 30px;
-    }
-    .title {
-        font-size: 28px;
-    }
-    .message {
-        font-size: 16px;
-        line-height: 2;
-    }
-    .gallery {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-    }
-    .photo {
-        height: 160px;
-    }
-}
-</style>
+        .music-title {
+            color: #e91e63;
+            font-size: 19px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        audio {
+            width: 100%;
+        }
+
+        /* =========================
+           الصور
+        ========================= */
+
+        .memory {
+            background: white;
+
+            padding: 12px;
+            margin-bottom: 35px;
+
+            border-radius: 25px;
+
+            box-shadow:
+                0 8px 25px rgba(200, 70, 110, 0.2);
+        }
+
+        .memory img {
+            width: 100%;
+            display: block;
+
+            border-radius: 20px;
+        }
+
+        /* =========================
+           الكلام تحت الصور
+        ========================= */
+
+        .message {
+            position: relative;
+
+            margin-top: 15px;
+            padding: 25px 18px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #fff0f5,
+                    #ffe1eb
+                );
+
+            border: 1px solid #ffc1d4;
+            border-radius: 22px;
+
+            text-align: center;
+
+            box-shadow:
+                0 5px 18px rgba(233, 30, 99, 0.12),
+                inset 0 0 15px rgba(255, 120, 160, 0.08);
+        }
+
+        .decor-top {
+            font-size: 20px;
+            margin-bottom: 12px;
+            letter-spacing: 4px;
+        }
+
+        .message p {
+            margin: 0;
+
+            font-size: 18px;
+            line-height: 2;
+
+            color: #7a3048;
+            font-weight: 500;
+        }
+
+        .decor-bottom {
+            margin-top: 14px;
+
+            font-size: 19px;
+            letter-spacing: 4px;
+        }
+
+        /* =========================
+           القلوب الأخيرة
+        ========================= */
+
+        .hearts {
+            text-align: center;
+
+            font-size: 30px;
+            margin: 25px 0;
+
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.08);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+    </style>
+
 </head>
+
 
 <body>
 
-<!-- ================= الخلفية والمؤثرات ================= -->
 
-<div class="background" id="background">
-    <div class="sparkle" style="top:10%; left:10%; font-size:24px;">✨</div>
-    <div class="sparkle" style="top:25%; right:12%; font-size:20px;">💖</div>
-    <div class="sparkle" style="top:60%; left:8%; font-size:22px;">✨</div>
-    <div class="sparkle" style="top:75%; right:10%; font-size:26px;">🌸</div>
-    <div class="sparkle" style="top:40%; left:85%; font-size:18px;">✨</div>
-    <div class="sparkle" style="top:85%; left:45%; font-size:20px;">💖</div>
-</div>
+<!-- =================================
+     الافتتاحية
+================================= -->
 
-<!-- ================= عنصر الصوت ================= -->
-<audio id="myAudio" src="./oUEDioUM52fGtCWTAlgyVeIzLoETIHVorfSVkI (1).mp3" loop preload="auto"></audio>
+<div id="opening">
 
-<!-- ================= الكارت ================= -->
+    <div class="falling flower1">🌹</div>
+    <div class="falling flower2">🌷</div>
+    <div class="falling flower3">🌸</div>
 
-<div class="card">
+    <div class="falling heart1">❤️</div>
+    <div class="falling heart2">💗</div>
+    <div class="falling heart3">💕</div>
+    <div class="falling heart4">💞</div>
 
-    <!-- شاشة كلمة السر -->
+    <div class="falling star1">✨</div>
+    <div class="falling star2">⭐</div>
+    <div class="falling star3">✨</div>
 
-    <div id="pass-screen">
-        <div class="lock">🔐❤️</div>
-        <h1>روح قلبي 💖</h1>
-        <p class="subtitle">
-            صفحه خاصه ب احمد و وروح قلبه بس <br>
-            اكتبي كلمة السر عشان تشوفي المفاجأة ✨
-        </p>
+    <div class="opening-text">
 
-        <input
-            type="text"
-            id="passInput"
-            placeholder="اكتبي كلمة السر..."
-            onkeypress="handleKeyPress(event)"
-        >
+        ❤️
         <br>
 
-        <button class="btn" onclick="checkPass()">
-            افتحي المفاجأة 💖
-        </button>
+        <span>
+            لأجمل شوشو في الدنيا
+        </span>
 
-        <p id="error">كلمة السر غلط 🙈❤️</p>
-    </div>
+        <br>
 
-    <!-- ================= المحتوى بعد كلمة السر ================= -->
-
-    <div id="content">
-
-        <div class="big-heart">💖</div>
-
-        <h1 class="title">كل سنة وإنتِ طيبة يا شوشتي 🎂❤️</h1>
-
-        <p class="subtitle">
-            النهارده يوم مميز جدًا... <br>
-            لأنه يوم ميلاد واحدة مميزة جدًا ✨
-        </p>
-
-        <!-- مشغل الموسيقى -->
-        <div class="music-player">
-            <span>🎵 أغنيتنا الخاصة:</span>
-            <button class="music-btn" id="musicToggle" onclick="toggleMusic()">
-                ⏸️ إيقاف الموسيقى
-            </button>
-        </div>
-
-        <!-- ================= الكلام ================= -->
-
-        <div class="message">
-            <div class="special">كل سنة وإنتِ طيبة يا شوشتي ❤️</div>
-            <br>
-            كل سنة وإنتِ بخير وفرح وسعادة،
-            ويارب السنة الجديدة من عمرك تكون أحلى من كل اللي فات. 🌸
-            <br><br>
-            ربنا يخليكي ليا دايمًا مبسوطة،
-            فيها كل حاجة نفسك فيها،
-            وتفضل الضحكة الحلوة دي منورة حياتك. ✨
-            <br><br>
-            ربنا يخليكي ليا ويطول في عمرك ونفضل سوا ياحلى اوشا 💖
-            <br><br>
-            ويارب كل سنة جديدة في حياتك
-            تكون بداية لحاجات أحلى وأجمل. ❤️
-            <br><br>
-            <div class="special">عيد ميلاد سعيد يا شوشتييي 🎂💖✨</div>
-        </div>
-
-        <!-- ================= معرض الصور بالأسماء الصحيحة ================= -->
-
-        <div class="gallery-title">ذكرياتنا الحلوة 📸❤️</div>
-
-        <div class="gallery">
-            <div class="photo-wrapper">
-                <img src="./433c4a1094a1211e1bd643e72788a19a_1.webp" alt="صورة 1" class="photo">
-            </div>
-            <div class="photo-wrapper">
-                <img src="./7492b3f3d4709c3eea8b3969395f2d86_2.webp" alt="صورة 2" class="photo">
-            </div>
-            <div class="photo-wrapper">
-                <img src="./9d24f416881a16d07edfac6b56ff1384_0.webp" alt="صورة 3" class="photo">
-            </div>
-            <div class="photo-wrapper">
-                <img src="./d838d951261e458c2516530da580aaaa_3.webp" alt="صورة 4" class="photo">
-            </div>
-        </div>
-
-        <!-- ================= النهاية ================= -->
-
-        <div class="end">
-            بحبك يا أحلى أوشا في الدنيا 💖✨
-        </div>
+        🌹✨
 
     </div>
 
 </div>
 
-<!-- ================= الجافاسكريبت ================= -->
 
-<script>
-const heartEmojis = ['❤️', '💖', '💕', '💗', '🌸', '✨'];
+<!-- =================================
+     محتوى الصفحة
+================================= -->
 
-function createHeart() {
-    const background = document.getElementById('background');
-    const heart = document.createElement('div');
-    heart.classList.add('heart');
-    
-    heart.innerText = heartEmojis[Math.floor(Math.random() * heartEmojis.length)];
-    
-    heart.style.left = Math.random() * 100 + 'vw';
-    heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
-    heart.style.fontSize = (Math.random() * 15 + 18) + 'px';
-    
-    background.appendChild(heart);
+<div class="container">
 
-    setTimeout(() => {
-        heart.remove();
-    }, 6000);
-}
 
-setInterval(createHeart, 350);
+    <h1>
+         ❤️✨
+    </h1>
 
-function handleKeyPress(event) {
-    if (event.key === 'Enter') {
-        checkPass();
-    }
-}
 
-function checkPass() {
-    const input = document.getElementById('passInput').value.trim();
-    const error = document.getElementById('error');
-    const passScreen = document.getElementById('pass-screen');
-    const content = document.getElementById('content');
-    const audio = document.getElementById('myAudio');
+    <!-- الأغنية -->
 
-    if (input === "بحبك يا احمد" || input === "بحبك ياأحمد") {
-        passScreen.style.display = 'none';
-        content.style.display = 'block';
-        error.style.display = 'none';
-        
-        audio.play().then(() => {
-            document.getElementById('musicToggle').innerHTML = '⏸️ إيقاف الموسيقى';
-        }).catch((e) => {
-            console.log("Audio play failed: ", e);
-            document.getElementById('musicToggle').innerHTML = '▶️ تشغيل الموسيقى';
-        });
+    <div class="music">
 
-        for(let i = 0; i < 25; i++) {
-            setTimeout(createHeart, i * 80);
-        }
-    } else {
-        error.style.display = 'block';
-    }
-}
+        <div class="music-title">
+            🎵 أغنيتنا ❤️
+        </div>
 
-function toggleMusic() {
-    const audio = document.getElementById('myAudio');
-    const btn = document.getElementById('musicToggle');
+        <audio controls>
 
-    if (audio.paused) {
-        audio.play();
-        btn.innerHTML = '⏸️ إيقاف الموسيقى';
-    } else {
-        audio.pause();
-        btn.innerHTML = '▶️ تشغيل الموسيقى';
-    }
-}
-</script>
+            <source
+                src="oUEDioUM52fGtCWTAlgyVeIzLoETIHVorfSVkI (1).mp3"
+                type="audio/mpeg"
+            >
+
+            المتصفح لا يدعم تشغيل الصوت.
+
+        </audio>
+
+    </div>
+
+
+    <!-- =================================
+         الصورة الأولى
+    ================================= -->
+
+    <div class="memory">
+
+        <img
+            src="Snapchat-856034311.jpg"
+            alt="صورة 1"
+        >
+
+        <div class="message">
+
+            <div class="decor-top">
+                ✨ 💗 🌸 💞 ✨
+            </div>
+
+            <p>
+                كل سنة وإنتي طيبة يا شوشتي،
+                كل سنة وإنتي جنبي،
+                كل سنة وإنتي نور عيني يا روحي،
+                ربنا يخليكي ليا وما يحرمنيش منك أبدًا 💫💞
+            </p>
+
+            <div class="decor-bottom">
+                💗 ✨ 🫂 ✨ 💗
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================
+         الصورة الثانية
+    ================================= -->
+
+    <div class="memory">
+
+        <img
+            src="Snapchat-1707431406.jpg"
+            alt="صورة 2"
+        >
+
+        <div class="message">
+
+            <div class="decor-top">
+                💕 ✨ 🫂 ✨ 💕
+            </div>
+
+            <p>
+                عاوز أقولك إني موصلتلكيش بسهولة،
+                إنتي مش مجرد بنت في حياتي،
+                إنتي اللي حاولت عشانك كتير،
+                عشان إنتي تستاهلي،
+                وعشانك أحاول مرة واتنين وتلاتة
+                لحد ما بقينا سوا.
+               يمكن بعدنا ورجعنا،
+                وكنا نتكلم ونقفل،
+                بس كل اللي أعرفه وحابب أقولهولك
+                إني محبتش حد قدك يا روحي،
+                وربنا يخليكي ليا ❤️‍🩹🫂
+            </p>
+
+            <div class="decor-bottom">
+                💞 ⭐ ❤️ ⭐ 💞
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================
+         الصورة الثالثة
+    ================================= -->
+
+    <div class="memory">
+
+        <img
+            src="Snapchat-1489699393.jpg"
+            alt="صورة 3"
+        >
+
+        <div class="message">
+
+            <div class="decor-top">
+                ✨ 💗 👀 💗 ✨
+            </div>
+
+            <p>
+                بحبك يا روح قلبييي 👀💗💗
+            </p>
+
+            <div class="decor-bottom">
+                💕 ✨ 🫂 ✨ 💕
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================
+         الصورة الرابعة
+    ================================= -->
+
+    <div class="memory">
+
+        <img
+            src="Screenshot_٢٠٢٦٠٨٢٣_١٨١٠٣٦_TikTok.jpg"
+            alt="صورة 4"
+        >
+
+        <div class="message">
+
+            <div class="decor-top">
+                💗 ✨ 💞 ⭐ 💞 ✨ 💗
+            </div>
+
+            <p>
+                إنتي مش بس حلوة،
+                إنتي من الناس اللي وجودها بيحلي اليوم أحلى،
+                وضحكتك لوحدها كفاية تغيّر مود يوم كامل.
+                عيونك حكاية،
+                وابتسامتك أجمل حاجة ممكن أشوفها،
+                وربنا يخليكي ليا يا أجمل حاجة حصلتلي ✨💗🫂
+            </p>
+
+            <div class="decor-bottom">
+                ❤️ 💕 ❤️ 💕 ❤️
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- النهاية -->
+
+    <div class="hearts">
+        ❤️ ✨ ❤️ ✨ ❤️
+    </div>
+
+
+</div>
+
 
 </body>
+
 </html>
