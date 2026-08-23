@@ -392,8 +392,8 @@ input:focus {
     <div class="sparkle" style="top:85%; left:45%; font-size:20px;">💖</div>
 </div>
 
-<!-- ================= عنصر الصوت بالاسم الدقيق ================= -->
-<audio id="myAudio" src="./oUEDioUM52fgCWTAI" loop></audio>
+<!-- ================= عنصر الصوت ================= -->
+<audio id="myAudio" src="./lv_7669281019530366981_20260823044140.mp4" loop preload="auto"></audio>
 
 <!-- ================= الكارت ================= -->
 
@@ -441,7 +441,7 @@ input:focus {
         <div class="music-player">
             <span>🎵 أغنيتنا الخاصة:</span>
             <button class="music-btn" id="musicToggle" onclick="toggleMusic()">
-                🔊 تشغيل الموسيقى
+                ⏸️ إيقاف الموسيقى
             </button>
         </div>
 
@@ -465,19 +465,22 @@ input:focus {
             <div class="special">عيد ميلاد سعيد يا شوشتييي 🎂💖✨</div>
         </div>
 
-        <!-- ================= معرض الصور بأسماء الصور الفعلية ================= -->
+        <!-- ================= معرض الصور بأسماء الملفات المرفوعة ================= -->
 
         <div class="gallery-title">ذكرياتنا الحلوة 📸❤️</div>
 
         <div class="gallery">
             <div class="photo-wrapper">
-                <img src="./Screenshot_٠٣١٩٤٥_٢٠٢٦٠..." alt="صورة 1" class="photo">
+                <img src="./433c4a1094a1211e1b1d2ebae7015d9a.jpg" alt="صورة 1" class="photo">
             </div>
             <div class="photo-wrapper">
-                <img src="./Screenshot_٠٣١٩٥٨_٢٠٢٦٠..." alt="صورة 2" class="photo">
+                <img src="./7492b3f3d4709c3eea8787889f074d23.jpg" alt="صورة 2" class="photo">
             </div>
             <div class="photo-wrapper">
-                <img src="./Screenshot_٠٣٢٠٣٥_٢٠٢٦٠..." alt="صورة 3" class="photo">
+                <img src="./9d24f416881a16d07edddfdd7ee241be.jpg" alt="صورة 3" class="photo">
+            </div>
+            <div class="photo-wrapper">
+                <img src="./d838d951261e458c253ffb438250e6ef.jpg" alt="صورة 4" class="photo">
             </div>
         </div>
 
@@ -536,7 +539,8 @@ function checkPass() {
         
         audio.play().then(() => {
             document.getElementById('musicToggle').innerHTML = '⏸️ إيقاف الموسيقى';
-        }).catch(() => {
+        }).catch((e) => {
+            console.log("Audio play failed: ", e);
             document.getElementById('musicToggle').innerHTML = '▶️ تشغيل الموسيقى';
         });
 
@@ -563,4 +567,4 @@ function toggleMusic() {
 </script>
 
 </body>
-            </html>
+</html>
